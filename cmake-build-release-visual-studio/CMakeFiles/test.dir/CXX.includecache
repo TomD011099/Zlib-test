@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Program Files (x86)/zlib/include/zconf.h
+stddef.h
+-
+windows.h
+-
+limits.h
+-
+sys/types.h
+-
+stdarg.h
+-
+stddef.h
+-
+unistd.h
+-
+unixio.h
+-
+
+C:/Program Files (x86)/zlib/include/zlib.h
+zconf.h
+C:/Program Files (x86)/zlib/include/zconf.h
+
+C:/Users/tomde/OneDrive - uantwerpen/School/6 BAP/test/main.cpp
+zlib.h
+C:/Users/tomde/OneDrive - uantwerpen/School/6 BAP/test/zlib.h
+iostream
+-
+vector
+-
+cstring
+-
+
