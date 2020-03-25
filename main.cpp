@@ -8,7 +8,7 @@ int level;
 std::vector<uint8_t> bus;
 
 void flush() {
-    std::vector<uint8_t> compressedPayload(pCompressedData, pCompressedData + strlen((char*)pCompressedData));
+    std::vector<uint8_t> compressedPayload(pCompressedData, pCompressedData + 512);
 
     std::string str(compressedPayload.begin(), compressedPayload.end());
     std::cout << "Compr\n" << str << "\n" << str.size() << "\n\n";
@@ -17,7 +17,7 @@ void flush() {
 }
 
 void sendData(const std::vector<uint8_t> &payload) {
-    //Can be anything --> should change to prevent overflow
+    //Can be anything --> should be dig enough to prevent overflow
     unsigned char data[1100];
     std::copy(payload.begin(), payload.end(), data);
 
@@ -43,7 +43,7 @@ void receiveData(const std::vector<uint8_t> &payload) {
     std::copy(payload.begin(), payload.end(), temp);
 
     unsigned long nDataSize = 10 * nCompressedDataSize;
-    auto * pUncompressedData = new unsigned char[1100];
+    auto * pUncompressedData =    new unsigned char[1100];
 
     int out = uncompress(pUncompressedData, &nDataSize, temp, nCompressedDataSize);
 
